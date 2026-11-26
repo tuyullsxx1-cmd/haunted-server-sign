@@ -5,6 +5,8 @@ LINE = "WARNING: this server room is haunted. Do not unplug anything. The ghosts
 assert "\n" not in LINE
 # The 120-character ceiling comes from the bounty brief for this sign.
 assert len(LINE) <= 120
+# A real sign warns; this one also brags about the ghosts' uptime record.
+assert "99.99%" in LINE
 
 out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
 os.makedirs(out_dir, exist_ok=True)
